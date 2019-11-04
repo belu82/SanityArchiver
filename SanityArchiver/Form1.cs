@@ -25,7 +25,7 @@ namespace SanityArchiver
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openD = new OpenFileDialog();
-            //openD.Title = "File browsing";
+            openD.Title = "File browsing";
             openD.InitialDirectory = @"D:\";
             openD.Filter = "All files (*.*) |*.*|All files (*.*)|*.*";
             openD.FilterIndex = 2;
