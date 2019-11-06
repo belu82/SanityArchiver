@@ -50,6 +50,12 @@ namespace SanityArchiver
 
         }
 
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            string path = openD.FileName;
+            FileInfo fileInfo = new FileInfo(path);
+            compr.Decompress(fileInfo);
+        }
     }
 }
