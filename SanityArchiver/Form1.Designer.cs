@@ -33,6 +33,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Compress = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Encrypt = new System.Windows.Forms.Button();
+            this.Decrypt = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // textBox1
@@ -82,11 +85,37 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Encrypt
+            // 
+            this.Encrypt.Location = new System.Drawing.Point(92, 170);
+            this.Encrypt.Name = "Encrypt";
+            this.Encrypt.Size = new System.Drawing.Size(141, 23);
+            this.Encrypt.TabIndex = 5;
+            this.Encrypt.Text = "Encrypt";
+            this.Encrypt.UseVisualStyleBackColor = true;
+            this.Encrypt.Click += new System.EventHandler(this.Encrypt_Click);
+            // 
+            // Decrypt
+            // 
+            this.Decrypt.Location = new System.Drawing.Point(92, 200);
+            this.Decrypt.Name = "Decrypt";
+            this.Decrypt.Size = new System.Drawing.Size(141, 23);
+            this.Decrypt.TabIndex = 6;
+            this.Decrypt.Text = "button3";
+            this.Decrypt.UseVisualStyleBackColor = true;
+            this.Decrypt.Click += new System.EventHandler(this.Decrypt_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 512);
+            this.Controls.Add(this.Decrypt);
+            this.Controls.Add(this.Encrypt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Compress);
             this.Controls.Add(this.button1);
@@ -106,6 +135,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Compress;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Encrypt;
+        private System.Windows.Forms.Button Decrypt;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

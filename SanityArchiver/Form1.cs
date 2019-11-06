@@ -57,5 +57,25 @@ namespace SanityArchiver
             FileInfo fileInfo = new FileInfo(path);
             compr.Decompress(fileInfo);
         }
+
+            Encrypt en = new Encrypt();
+        private void Encrypt_Click(object sender, EventArgs e)
+        {
+            // Stores a key pair in the key container.
+            string path = openD.FileName;
+            en.EncryptFile(path);
+        }
+
+        private void Decrypt_Click(object sender, EventArgs e)
+        {
+            string fName = openD.FileName;
+            if (fName != null)
+            {
+                FileInfo fi = new FileInfo(fName);
+                string name = fi.Name;
+                en.DecryptFile(name);
+            }
+            
+        }
     }
 }
