@@ -36,6 +36,9 @@
             this.Encrypt = new System.Windows.Forms.Button();
             this.Decrypt = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
+            this.openFile = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -101,7 +104,7 @@
             this.Decrypt.Name = "Decrypt";
             this.Decrypt.Size = new System.Drawing.Size(141, 23);
             this.Decrypt.TabIndex = 6;
-            this.Decrypt.Text = "button3";
+            this.Decrypt.Text = "Decrypt";
             this.Decrypt.UseVisualStyleBackColor = true;
             this.Decrypt.Click += new System.EventHandler(this.Decrypt_Click);
             // 
@@ -109,11 +112,41 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(92, 241);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(141, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Attributes";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // openFile
+            // 
+            this.openFile.Location = new System.Drawing.Point(92, 298);
+            this.openFile.Name = "openFile";
+            this.openFile.Size = new System.Drawing.Size(141, 23);
+            this.openFile.TabIndex = 8;
+            this.openFile.Text = "Open file";
+            this.openFile.UseVisualStyleBackColor = true;
+            this.openFile.Click += new System.EventHandler(this.openFile_Click);
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(361, 13);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(100, 22);
+            this.tbPassword.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 512);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.openFile);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Decrypt);
             this.Controls.Add(this.Encrypt);
             this.Controls.Add(this.button2);
@@ -123,6 +156,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +172,9 @@
         private System.Windows.Forms.Button Encrypt;
         private System.Windows.Forms.Button Decrypt;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button openFile;
+        private System.Windows.Forms.TextBox tbPassword;
     }
 }
 

@@ -8,26 +8,18 @@ using System.Threading.Tasks;
 
 namespace SanityArchiver
 {
+    /*
     class Encrypt
     {
         //source(https://docs.microsoft.com/en-us/dotnet/standard/security/walkthrough-creating-a-cryptographic-application)
         CspParameters cspp = new CspParameters();
         
         RSACryptoServiceProvider rsa;
-
        
         const string EncrFolder = @"d:\teszt\";
         const string DecrFolder = @"d:\teszt\";
 
-        const string keyName = "Key01";
-
-        private void Encrypting()
-        {
-            // Stores a key pair in the key container.
-            cspp.KeyContainerName = keyName;
-            rsa = new RSACryptoServiceProvider(cspp);
-            rsa.PersistKeyInCsp = true;            
-        }
+        const string keyName = "Key01";       
         public void EncryptFile(string inFile)
         {
             if(rsa == null)
@@ -93,7 +85,6 @@ namespace SanityArchiver
                 outFs.Close();
             }
         }
-
         public void DecryptFile(string inFile)
         {
             if (rsa == null)
@@ -124,8 +115,7 @@ namespace SanityArchiver
 
                 int lenK = BitConverter.ToInt32(LenK, 0);
                 int lenIV = BitConverter.ToInt32(LenIV, 0);
-
-               
+                               
                 int startC = lenK + lenIV + 8;
                 int lenC = (int)inFs.Length - startC;
 
@@ -172,4 +162,7 @@ namespace SanityArchiver
             }
         }
     }
+        */
+
+
 }
