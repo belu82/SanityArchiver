@@ -39,6 +39,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.openFile = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.Encryption = new System.Windows.Forms.GroupBox();
+            this.button_copy = new System.Windows.Forms.Button();
+            this.button_move = new System.Windows.Forms.Button();
+            this.Encryption.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -60,7 +64,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(92, 59);
+            this.button1.Location = new System.Drawing.Point(92, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 23);
             this.button1.TabIndex = 2;
@@ -70,7 +74,7 @@
             // 
             // Compress
             // 
-            this.Compress.Location = new System.Drawing.Point(92, 101);
+            this.Compress.Location = new System.Drawing.Point(92, 65);
             this.Compress.Name = "Compress";
             this.Compress.Size = new System.Drawing.Size(141, 23);
             this.Compress.TabIndex = 3;
@@ -80,7 +84,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(92, 131);
+            this.button2.Location = new System.Drawing.Point(92, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 23);
             this.button2.TabIndex = 4;
@@ -90,7 +94,7 @@
             // 
             // Encrypt
             // 
-            this.Encrypt.Location = new System.Drawing.Point(92, 170);
+            this.Encrypt.Location = new System.Drawing.Point(0, 21);
             this.Encrypt.Name = "Encrypt";
             this.Encrypt.Size = new System.Drawing.Size(141, 23);
             this.Encrypt.TabIndex = 5;
@@ -100,7 +104,7 @@
             // 
             // Decrypt
             // 
-            this.Decrypt.Location = new System.Drawing.Point(92, 200);
+            this.Decrypt.Location = new System.Drawing.Point(0, 50);
             this.Decrypt.Name = "Decrypt";
             this.Decrypt.Size = new System.Drawing.Size(141, 23);
             this.Decrypt.TabIndex = 6;
@@ -114,7 +118,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(92, 241);
+            this.button3.Location = new System.Drawing.Point(92, 123);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(141, 23);
             this.button3.TabIndex = 7;
@@ -124,7 +128,7 @@
             // 
             // openFile
             // 
-            this.openFile.Location = new System.Drawing.Point(92, 298);
+            this.openFile.Location = new System.Drawing.Point(92, 152);
             this.openFile.Name = "openFile";
             this.openFile.Size = new System.Drawing.Size(141, 23);
             this.openFile.TabIndex = 8;
@@ -134,21 +138,54 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(361, 13);
+            this.tbPassword.Location = new System.Drawing.Point(6, 89);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 22);
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(135, 22);
             this.tbPassword.TabIndex = 11;
+            // 
+            // Encryption
+            // 
+            this.Encryption.Controls.Add(this.Encrypt);
+            this.Encryption.Controls.Add(this.tbPassword);
+            this.Encryption.Controls.Add(this.Decrypt);
+            this.Encryption.Location = new System.Drawing.Point(437, 12);
+            this.Encryption.Name = "Encryption";
+            this.Encryption.Size = new System.Drawing.Size(152, 134);
+            this.Encryption.TabIndex = 12;
+            this.Encryption.TabStop = false;
+            this.Encryption.Text = "Encryption";
+            // 
+            // button_copy
+            // 
+            this.button_copy.Location = new System.Drawing.Point(92, 182);
+            this.button_copy.Name = "button_copy";
+            this.button_copy.Size = new System.Drawing.Size(141, 23);
+            this.button_copy.TabIndex = 13;
+            this.button_copy.Text = "Copy";
+            this.button_copy.UseVisualStyleBackColor = true;
+            this.button_copy.Click += new System.EventHandler(this.button_copy_Click);
+            // 
+            // button_move
+            // 
+            this.button_move.Location = new System.Drawing.Point(92, 212);
+            this.button_move.Name = "button_move";
+            this.button_move.Size = new System.Drawing.Size(141, 23);
+            this.button_move.TabIndex = 14;
+            this.button_move.Text = "Move";
+            this.button_move.UseVisualStyleBackColor = true;
+            this.button_move.Click += new System.EventHandler(this.button_move_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 512);
-            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.button_move);
+            this.Controls.Add(this.button_copy);
+            this.Controls.Add(this.Encryption);
             this.Controls.Add(this.openFile);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.Decrypt);
-            this.Controls.Add(this.Encrypt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Compress);
             this.Controls.Add(this.button1);
@@ -157,6 +194,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Encryption.ResumeLayout(false);
+            this.Encryption.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +214,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button openFile;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.GroupBox Encryption;
+        private System.Windows.Forms.Button button_copy;
+        private System.Windows.Forms.Button button_move;
     }
 }
 

@@ -32,18 +32,21 @@ namespace SanityArchiver
 
         public void Decompress(FileInfo fileDecompress)
         {
+            string directoryPath = @"d:\teszt\e";
+            DirectoryInfo directorySelected = new DirectoryInfo(directoryPath);
             using (FileStream originalFileStrem = fileDecompress.OpenRead())
             {
-                string currentFileName = fileDecompress.FullName;
+                string currentFileName =  fileDecompress.FullName;
                 string newFileName = currentFileName.Remove(currentFileName.Length - fileDecompress.Extension.Length);
 
+                
                 using (FileStream decompressedFileStream = File.Create(newFileName))
                 {
 
                     using (GZipStream decompressionStream = new GZipStream(originalFileStrem, CompressionMode.Decompress))
                     {
                         decompressionStream.CopyTo(decompressedFileStream);
-
+                    
                     }
                 }
             }

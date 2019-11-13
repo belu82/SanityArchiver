@@ -60,6 +60,7 @@ namespace SanityArchiver
             string path = openD.FileName;
             FileInfo fileInfo = new FileInfo(path);
             compr.Decompress(fileInfo);
+            
         }
 
             //Encrypt en = new Encrypt();
@@ -228,6 +229,46 @@ namespace SanityArchiver
                 {
                     table[i, j] = abc[(i + j) % 256];
                 }
+            }
+        }
+
+        public void copyFile(string source, string destination)
+        {
+            
+            FileStream fsOut = new FileStream(destination, FileMode.Create);
+            FileStream fsIn = new FileStream(source, FileMode.Open);
+            byte[] bt = new byte[1048756];
+            int readByte;
+
+            while((readByte = fsIn.Read(bt, 0, bt.Length)) > 0)
+            {
+                fsOut.Write(bt, 0, readByte);
+
+            }
+            fsIn.Close();
+            fsOut.Close();
+            
+        }
+        private void button_copy_Click(object sender, EventArgs e)
+        {
+
+
+            FolderBrowserDialog fb = new FolderBrowserDialog();
+            if(fb.ShowDialog() == DialogResult.OK)
+            {
+                
+                copyFile(textBox1.Text, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
+            }
+
+
+        }
+
+        private void button_move_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fb = new FolderBrowserDialog();
+            if (fb.ShowDialog() == DialogResult.OK)
+            {
+                copyFile(textBox1.Text, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
             }
         }
     }
