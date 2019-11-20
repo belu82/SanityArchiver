@@ -42,7 +42,15 @@
             this.Encryption = new System.Windows.Forms.GroupBox();
             this.button_copy = new System.Windows.Forms.Button();
             this.button_move = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Encryption.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -149,7 +157,7 @@
             this.Encryption.Controls.Add(this.Encrypt);
             this.Encryption.Controls.Add(this.tbPassword);
             this.Encryption.Controls.Add(this.Decrypt);
-            this.Encryption.Location = new System.Drawing.Point(437, 12);
+            this.Encryption.Location = new System.Drawing.Point(278, 13);
             this.Encryption.Name = "Encryption";
             this.Encryption.Size = new System.Drawing.Size(152, 134);
             this.Encryption.TabIndex = 12;
@@ -176,11 +184,74 @@
             this.button_move.UseVisualStyleBackColor = true;
             this.button_move.Click += new System.EventHandler(this.button_move_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Location = new System.Drawing.Point(278, 152);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(152, 151);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Searching";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 95);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(131, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Filename:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(7, 47);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 22);
+            this.textBox2.TabIndex = 0;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(477, 34);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(267, 278);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "File name";
+            this.columnHeader1.Width = 81;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "File path";
+            this.columnHeader2.Width = 108;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 512);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_move);
             this.Controls.Add(this.button_copy);
             this.Controls.Add(this.Encryption);
@@ -196,6 +267,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Encryption.ResumeLayout(false);
             this.Encryption.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,6 +290,13 @@
         private System.Windows.Forms.GroupBox Encryption;
         private System.Windows.Forms.Button button_copy;
         private System.Windows.Forms.Button button_move;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 

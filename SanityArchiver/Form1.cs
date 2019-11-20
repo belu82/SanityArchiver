@@ -16,6 +16,7 @@ namespace SanityArchiver
 {
     public partial class Form1 : Form
     {
+        static List<FileInfo> FoundFiles;
         byte[] abc;
         byte[,] table;
         public Form1()
@@ -259,8 +260,7 @@ namespace SanityArchiver
                 
                 copyFile(textBox1.Text, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
             }
-
-
+            
         }
 
         private void button_move_Click(object sender, EventArgs e)
@@ -270,6 +270,49 @@ namespace SanityArchiver
             {
                 copyFile(textBox1.Text, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {            
+            listView1.Items.Clear();
+            FoundFiles = new List<FileInfo>();
+            string fileName = textBox2.Text;
+            string path = @"d:\teszt";
+            
+            DirectoryInfo rootDir = new DirectoryInfo(path);
+            
+            RecursiveSearch(FoundFiles, fileName, rootDir);
+            
+            if (FoundFiles.Count == 0)
+            {
+                MessageBox.Show("Nem található a keresett fájl");
+            }
+            else
+            {
+                foreach (FileInfo ls in FoundFiles)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Text = ls.Name;
+                    item.SubItems.Add(ls.DirectoryName);
+                    listView1.Items.Add(item);                    
+                }
+            }
+            FoundFiles.Clear();
+           
+        }
+        static void RecursiveSearch(List<FileInfo> foundFiles, string fileName, DirectoryInfo currentDirectory)
+        {
+
+
+            foreach (FileInfo fil in currentDirectory.GetFiles(fileName))
+            {                              
+                foundFiles.Add(fil);                                         
+            }
+            foreach (DirectoryInfo dir in currentDirectory.GetDirectories())
+            {
+                RecursiveSearch(foundFiles, fileName, dir);
+            }
+
         }
     }
 }
