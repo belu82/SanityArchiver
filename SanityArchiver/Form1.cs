@@ -294,6 +294,7 @@ namespace SanityArchiver
                     ListViewItem item = new ListViewItem();
                     item.Text = ls.Name;
                     item.SubItems.Add(ls.DirectoryName);
+                    item.SubItems.Add(ls.Length.ToString());
                     listView1.Items.Add(item);                    
                 }
             }
@@ -313,6 +314,21 @@ namespace SanityArchiver
                 RecursiveSearch(foundFiles, fileName, dir);
             }
 
+        }
+        private static void CopySelectedItems(ListView source, ListView target)
+        {
+            foreach (ListViewItem item in source.SelectedItems)
+            {
+                target.Items.Add((ListViewItem)item.Clone());
+            }
+        }
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {                     
+            string filePath = listView1.SelectedItems[0].SubItems[1].Text;
+            string fileFolder = listView1.SelectedItems[0].Text;
+            string path = Path.Combine(filePath, fileFolder);
+            FileReading reading = new FileReading(path);
+            reading.Show();
         }
     }
 }
