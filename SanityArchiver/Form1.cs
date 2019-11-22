@@ -213,6 +213,7 @@ namespace SanityArchiver
         }
 
         
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -250,6 +251,8 @@ namespace SanityArchiver
             fsOut.Close();
             
         }
+
+
         private void button_copy_Click(object sender, EventArgs e)
         {
 
@@ -265,11 +268,22 @@ namespace SanityArchiver
 
         private void button_move_Click(object sender, EventArgs e)
         {
+            /*
             FolderBrowserDialog fb = new FolderBrowserDialog();
             if (fb.ShowDialog() == DialogResult.OK)
             {
                 copyFile(textBox1.Text, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
             }
+            */
+
+            string filePath = openD.FileName;
+            FolderBrowserDialog fb = new FolderBrowserDialog();
+            if (fb.ShowDialog() == DialogResult.OK)
+            {
+                File.Move(filePath, Path.Combine(fb.SelectedPath, Path.GetFileName(textBox1.Text)));
+            }
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
